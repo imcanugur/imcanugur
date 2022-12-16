@@ -1,13 +1,6 @@
-- 👋 Merhaba Ben Uğur CAN
-- 👀 Detaylı Bilgi ve İletişim için: www.ugurcan.live
+<img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="5%"> Merhaba Ben Uğur CAN
+- 👀 Bilgi ve iletişim için www.ugurcan.live adresini ziyaret edebilirsin.
 
-
-
-<!--- - 🌱 I’m currently learning ...
-- 💞️ I’m looking to collaborate on ...
-- 📫 How to reach me ...
-
-
-imcanugur/imcanugur is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-You can click the Preview link to take a look at your changes.
---->
+<img src="https://gpvc.arturio.dev/imcanugur" alt="profile views"><br>
+[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=imcanugur&layout=compact)](https://github.com/anuraghazra/github-readme-stats)<br>
+![Github stats 2](https://github-readme-stats.vercel.app/api?username=imcanugur&show_icons=true&theme=radical)
