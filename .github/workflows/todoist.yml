@@ -7,10 +7,13 @@ on:
       
 jobs:
   update-readme:
-    name: Update this repo's README
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - name: Setup Git config
+        run: |
+          git config --global user.name "Uğur CAN"
+          git config --global user.email "ugurc1477@gmail.com"
       - uses: abhisheknaiidu/todoist-readme@master
         with:
           TODOIST_API_KEY: ${{ secrets.TODOIST_API_KEY }}
