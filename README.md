@@ -1,6 +1,11 @@
 <h1 align="center">
 <a href="https://git.io/typing-svg" target="_blank" rel="noreferrer">
-  <img src="https://readme-typing-svg.herokuapp.com/?lines=Hello,+There;I%E2%80%99m+U%C4%9Fur+CAN.;Software+Engineer+%7C+Problem+Solver;Quality+%26+efficiency+focused.&center=true&size=18&color=61dafb&speed=80" alt="typing animation" />
+
+<img
+  src="https://readme-typing-svg.herokuapp.com/?lines=Hello,+There;I%E2%80%99m+U%C4%9Fur+CAN.;Software+Engineer+%7C+Problem+Solver;Committed+to+quality+and+efficiency.;Focused+on+clean,+maintainable+code.&center=true&size=28&color=61dafb&speed=100"
+  alt="typing animation"
+/>
+
 </a>
 </h1>
 
