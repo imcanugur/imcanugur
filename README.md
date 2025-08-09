@@ -327,7 +327,6 @@
 </a>
       </td>
     </tr>
-
         <tr>
       <td align="center" colspan="2" style="padding-top: 20px;">
         <a href="https://github-readme-activity-graph.vercel.app/graph?username=imcanugur&theme=react-dark&bg_color=20232a&hide_border=true" title="Activity Graph">
