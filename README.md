@@ -302,11 +302,11 @@
 <hr>
 <h2 align="center">⚡ Stats ⚡</h2>
 <p align="center">
-  <table width="100%" style="max-width: 820px; margin: auto;">
+ <table width="100%" style="max-width: 820px; margin: auto; border-collapse: separate; border-spacing: 0 20px;">
     <tr>
       <td align="left" width="50%">
         <a href="https://github.com/imcanugur" title="GitHub Streaks">
-          <img src="https://streak-stats.demolab.com/?user=imcanugur&theme=react&border=61dafb&hide_border=true" width="380" alt="GitHub Streaks" />
+          <img src="https://github-readme-streak-stats.herokuapp.com/?user=imcanugur&theme=react&border=61dafb&hide_border=true" width="380" alt="GitHub Streaks" />
         </a>
       </td>
       <td align="right" width="50%">
@@ -325,25 +325,6 @@
 <a href="https://github.com/anuraghazra/github-readme-stats" title="Repo Language Count">
   <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=imcanugur&layout=donut&theme=react&hide_border=true" width="380" alt="Repo Language Count" />
 </a>
-      </td>
-    </tr>
-    <tr>
-      <td align="left" width="50%" style="padding-top: 20px;">
-      <p>
-    <!--📊 **this week i spent my time on:**-->
-    <!--START_SECTION:waka-->
-
-```txt
-No activity tracked
-```
-
-<!--END_SECTION:waka-->
-      </p>
-      </td>
-      <td align="right" width="50%" style="padding-top: 20px;">
-      <!--🚧 **my todoist stats:** -->
-      <!-- TODO-IST:START -->
-      <!-- TODO-IST:END -->
       </td>
     </tr>
         <tr>
@@ -377,3 +358,10 @@ No activity tracked
 
 </div>
 
+📊 **this week i spent my time on:**
+<!--START_SECTION:waka-->
+<!--END_SECTION:waka-->
+
+🚧 **my todoist stats:**
+<!-- TODO-IST:START -->
+<!-- TODO-IST:END -->
