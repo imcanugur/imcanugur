@@ -327,6 +327,29 @@
 </a>
       </td>
     </tr>
+    <tr>
+      <td align="left" width="50%" style="padding-top: 20px;">
+      <p>
+    <!--📊 **this week i spent my time on:**-->
+    <!--START_SECTION:waka-->
+
+```txt
+No activity tracked
+```
+
+<!--END_SECTION:waka-->
+      </p>
+      </td>
+      <td align="right" width="50%" style="padding-top: 20px;">
+      <!--🚧 **my todoist stats:** -->
+      <!-- TODO-IST:START -->
+🏆  100 Karma Points           
+🌸  Completed 0 tasks today           
+✅  Completed 0 tasks so far           
+⏳  Longest streak is 0 days
+<!-- TODO-IST:END -->
+      </td>
+    </tr>
         <tr>
       <td align="center" colspan="2" style="padding-top: 20px;">
         <a href="https://github-readme-activity-graph.vercel.app/graph?username=imcanugur&theme=react-dark&bg_color=20232a&hide_border=true" title="Activity Graph">
