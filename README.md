@@ -365,3 +365,8 @@
 🚧 **my todoist stats:**
 <!-- TODO-IST:START -->
 <!-- TODO-IST:END -->
+
+[![GitHub Streak 1](https://github-readme-streak-stats.herokuapp.com/?user=imcanugur&theme=react&border=61dafb&hide_border=true)](https://github-readme-streak-stats.herokuapp.com)
+
+
+[![GitHub Streak 2](https://streak-stats.demolab.com/?user=imcanugur&theme=react&border=61dafb&hide_border=true)](https://git.io/streak-stats)
