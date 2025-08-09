@@ -332,7 +332,12 @@
       <p>
     <!--📊 **this week i spent my time on:**-->
     <!--START_SECTION:waka-->
-    <!--END_SECTION:waka-->
+
+```txt
+No activity tracked
+```
+
+<!--END_SECTION:waka-->
       </p>
       </td>
       <td align="right" width="50%" style="padding-top: 20px;">
