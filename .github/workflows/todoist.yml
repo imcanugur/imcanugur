@@ -6,15 +6,19 @@ on:
 #    - cron: "* * * * *"
       
 jobs:
-  update-readme:
+  generate:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Setup Git config
-        run: |
-          git config --global user.name "Uğur CAN"
-          git config --global user.email "ugurc1477@gmail.com"
-      - uses: abhisheknaiidu/todoist-readme@master
+      - name: Run todoist-readme to update README.md
+        uses: abhisheknaiidu/todoist-readme@master
         with:
           TODOIST_API_KEY: ${{ secrets.TODOIST_API_KEY }}
           PREMIUM: ""
+      - name: Commit and push changes
+        run: |
+          git config --global user.name "Uğur CAN"
+          git config --global user.email "ugurc1477@gmail.com"
+          git add README.md
+          git commit -m "Update todoist stats"
+          git push
