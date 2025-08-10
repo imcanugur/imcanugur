@@ -33,7 +33,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-
       - name: Copy only SVG files to output-threeD branch (without folder)
         run: |
           find profile-3d-contrib -name '*.svg' -exec cp {} ./ \;
@@ -45,11 +44,8 @@ jobs:
         shell: bash
 
       - name: Commit and push only SVG files
-        run: |
-          git config user.name "github-actions"
-          git config user.email "github-actions@github-actions.com"
-          git add '*.svg'
-          git commit -m "generated SVGs"
-          git push origin output-threeD
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "generated three-d"
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GIT_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
