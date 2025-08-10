@@ -20,21 +20,21 @@ jobs:
         uses: yoshi389111/github-profile-3d-contrib@0.7.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          USERNAME: imcanugur
+          USERNAME: ${{ github.com/imcanugur }}
 
-      - name: Checkout output branch
+      - name: Checkout output-threeD branch
         run: |
-          git fetch origin output
-          git checkout output || git checkout -b output
+          git fetch origin output-threeD
+          git checkout output-threeD || git checkout -b output-threeD
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Commit and push changes to output branch
+      - name: Commit and push changes to output-threeD branch
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
           git add -A
           git commit -m "generated"
-          git push origin output
+          git push origin output-threeD
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
