@@ -46,6 +46,8 @@ jobs:
       - name: Commit and push only SVG files
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "generated three-d"
+          commit_message: "generated SVGs"
+          add_options: "--set-upstream origin output-threeD"
         env:
           GIT_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
