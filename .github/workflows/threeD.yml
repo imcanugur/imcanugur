@@ -11,6 +11,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    name: generate-github-profile-3d-contrib
     steps:
       - name: Checkout source code
         uses: actions/checkout@v2
@@ -21,10 +22,15 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           USERNAME: imcanugur
 
-      - name: Checkout output-threeD branch
+      - name: Checkout or create output-threeD branch
         run: |
-          git fetch origin output-threeD
-          git checkout output-threeD || git checkout -b output-threeD
+          git fetch origin || echo "fetch failed, possibly first run"
+          if git ls-remote --exit-code --heads origin output-threeD; then
+            git checkout output-threeD
+          else
+            git checkout -b output-threeD
+            git push origin output-threeD
+          fi
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
