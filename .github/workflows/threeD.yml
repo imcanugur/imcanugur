@@ -22,7 +22,7 @@ jobs:
           USERNAME: imcanugur
 
 
-            - name: Checkout or create empty output-threeD branch
+      - name: Checkout or create empty output-threeD branch
         run: |
           if git ls-remote --exit-code --heads origin output-threeD; then
             git checkout output-threeD
