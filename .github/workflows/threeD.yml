@@ -28,9 +28,11 @@ jobs:
           git rm -rf .
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
+          git commit --allow-empty -m "Start fresh output-threeD branch"
           git push origin output-threeD --force
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
 
       - name: Copy only SVG files to output-threeD branch (without folder)
         run: |
