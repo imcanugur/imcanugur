@@ -11,7 +11,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    name: generate-github-profile-3d-contrib
     steps:
       - name: Checkout source code
         uses: actions/checkout@v2
@@ -20,7 +19,11 @@ jobs:
         uses: yoshi389111/github-profile-3d-contrib@0.7.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          USERNAME: ${{ github.com/imcanugur }}
+          USERNAME: imcanugur
+
+      - name: List dist folder (debug)
+        run: |
+          ls -la dist || echo "dist folder not found"
 
       - name: Checkout output-threeD branch
         run: |
@@ -28,6 +31,11 @@ jobs:
           git checkout output-threeD || git checkout -b output-threeD
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Copy generated files to output-threeD branch
+        run: |
+          cp -r dist/* ./
+        shell: bash
 
       - name: Commit and push changes to output-threeD branch
         run: |
