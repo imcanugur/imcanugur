@@ -50,7 +50,8 @@ jobs:
         with:
           commit_message: "generated SVGs"
           branch: output-threeD
-          push_options: "--set-upstream origin output-threeD"
+          force_push: true
         env:
           GIT_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
 
