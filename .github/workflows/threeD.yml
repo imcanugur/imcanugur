@@ -11,7 +11,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    name: generate-github-profile-3d-contrib
     steps:
       - name: Checkout source code
         uses: actions/checkout@v2
@@ -22,24 +21,30 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           USERNAME: imcanugur
 
-      - name: Checkout or create output-threeD branch
+      - name: Checkout or create empty output-threeD branch
         run: |
-          git fetch origin || echo "fetch failed, possibly first run"
           if git ls-remote --exit-code --heads origin output-threeD; then
             git checkout output-threeD
           else
-            git checkout -b output-threeD
-            git push origin output-threeD
+            git checkout --orphan output-threeD
+            git rm -rf .
+            git commit --allow-empty -m "Start output-threeD branch"
+            git push origin output-threeD --force
           fi
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Commit and push changes to output-threeD branch
+      - name: Copy only SVG files to output-threeD branch
+        run: |
+          find profile-3d-contrib -name '*.svg' -exec cp {} ./ \;
+        shell: bash
+
+      - name: Commit and push only SVG files
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
-          git add -A
-          git commit -m "generated"
+          git add '*.svg'
+          git commit -m "generated SVGs"
           git push origin output-threeD
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
