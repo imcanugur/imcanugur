@@ -36,7 +36,6 @@ jobs:
         with:
           commit_message: "Start fresh output-threeD branch"
           allow_empty_commit: true
-          push_options: "--set-upstream origin output-threeD --force"
           force_push: true
         env:
           GIT_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
