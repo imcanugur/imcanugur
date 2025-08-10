@@ -47,7 +47,7 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "generated SVGs"
-          add_options: "--set-upstream origin output-threeD"
+          push_options: "--set-upstream origin output-threeD"
         env:
           GIT_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
