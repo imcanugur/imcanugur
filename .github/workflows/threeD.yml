@@ -21,9 +21,9 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           USERNAME: imcanugur
 
-
       - name: Checkout or create empty output-threeD branch
         run: |
+          git fetch origin output-threeD || echo "Branch may not exist yet"
           if git ls-remote --exit-code --heads origin output-threeD; then
             git checkout output-threeD
           else
