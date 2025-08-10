@@ -349,6 +349,15 @@
       </td>
     </tr>
         <tr>
+      <td align="center" colspan="2">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/imcanugur/imcanugur/output-threeD/profile-night-rainbow.svg?v=1" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/imcanugur/imcanugur/output-threeD/profile-night-rainbow.svg?v=1" />
+  <img alt="github-snake" src="https://raw.githubusercontent.com/imcanugur/imcanugur/output-threeD/profile-night-rainbow.svg?v=1" />
+</picture>
+      </td>
+    </tr>
+        <tr>
       <td align="center" colspan="2" style="padding-top: 20px;">
         <a href="https://github.com/ryo-ma/github-profile-trophy" title="Activity Graph">
           <img src="https://github-profile-trophy.vercel.app/?username=imcanugur&theme=transparent&no-frame=true" width="100%" alt="GitHub Activity Graph" />
