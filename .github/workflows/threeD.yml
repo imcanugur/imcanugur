@@ -13,8 +13,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout source code
-        uses: actions/checkout@v2
-
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          
       - name: Generate profile 3D contrib
         uses: yoshi389111/github-profile-3d-contrib@0.7.0
         env:
@@ -47,6 +49,7 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "generated SVGs"
+          branch: output-threeD
           push_options: "--set-upstream origin output-threeD"
         env:
           GIT_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
