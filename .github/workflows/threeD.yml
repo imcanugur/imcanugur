@@ -21,21 +21,12 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           USERNAME: imcanugur
 
-      - name: List dist folder (debug)
-        run: |
-          ls -la dist || echo "dist folder not found"
-
       - name: Checkout output-threeD branch
         run: |
           git fetch origin output-threeD
           git checkout output-threeD || git checkout -b output-threeD
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Copy generated files to output-threeD branch
-        run: |
-          cp -r dist/* ./
-        shell: bash
 
       - name: Commit and push changes to output-threeD branch
         run: |
