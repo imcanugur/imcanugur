@@ -28,20 +28,12 @@ jobs:
           git push origin --delete output-threeD || echo "Branch does not exist"
           git checkout --orphan output-threeD
           git rm -rf .
+          git config user.name "${{ github.actor }}"
+          git config user.email "${{ github.actor }}@users.noreply.github.com"
+          git commit --allow-empty -m "Start fresh output-threeD branch"
+          git push --set-upstream origin output-threeD --force
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Auto commit empty start fresh commit
-        uses: stefanzweifel/git-auto-commit-action@v5
-        with:
-          commit_message: "Start fresh output-threeD branch"
-          allow_empty_commit: true
-          push_options: "--set-upstream origin output-threeD"
-          force_push: true
-        env:
-          GIT_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      
-      
 
       - name: Copy only SVG files to output-threeD branch (without folder)
         run: |
