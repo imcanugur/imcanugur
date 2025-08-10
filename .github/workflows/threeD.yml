@@ -29,10 +29,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Copy generated files to output branch
-        run: |
-          cp -r dist/* ./
-
       - name: Commit and push changes to output branch
         run: |
           git config user.name "github-actions"
