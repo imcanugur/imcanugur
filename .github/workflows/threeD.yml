@@ -25,11 +25,6 @@ jobs:
         run: |
           git push origin --delete output-threeD || echo "Branch does not exist"
           git checkout --orphan output-threeD
-          git rm -rf .
-          git config user.name "github-actions"
-          git config user.email "github-actions@github.com"
-          git commit --allow-empty -m "Start fresh output-threeD branch"
-          git push origin output-threeD --force
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -46,8 +41,8 @@ jobs:
 
       - name: Commit and push only SVG files
         run: |
-          git config user.name "github-actions"
-          git config user.email "github-actions@github-actions.com"
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@github-actions.com"
           git add '*.svg'
           git commit -m "generated SVGs"
           git push origin output-threeD
