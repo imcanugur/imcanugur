@@ -21,30 +21,21 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           USERNAME: imcanugur
 
-      - name: Checkout or create empty output-threeD branch
+      - name: Delete and recreate output-threeD branch
         run: |
-          git fetch origin output-threeD || echo "Branch may not exist yet"
-          if git ls-remote --exit-code --heads origin output-threeD; then
-            git checkout output-threeD
-          else
-            git checkout --orphan output-threeD
-            git rm -rf .
-            git config user.name "github-actions"
-            git config user.email "github-actions@github.com"
-            git commit --allow-empty -m "Start output-threeD branch"
-            git push origin output-threeD --force
-          fi
+          git push origin --delete output-threeD || echo "Branch does not exist"
+          git checkout --orphan output-threeD
+          git rm -rf .
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git commit --allow-empty -m "Start fresh output-threeD branch"
+          git push origin output-threeD --force
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Copy only SVG files to output-threeD branch (without folder)
         run: |
           find profile-3d-contrib -name '*.svg' -exec cp {} ./ \;
-        shell: bash
-
-      - name: Remove profile-3d-contrib folder if exists
-        run: |
-          rm -rf profile-3d-contrib
         shell: bash
 
       - name: Commit and push only SVG files
