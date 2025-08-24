@@ -359,8 +359,8 @@
     </tr>
         <tr>
       <td align="center" colspan="2" style="padding-top: 20px;">
-        <a href="https://github.com/ryo-ma/github-profile-trophy" title="Activity Graph">
-          <img src="https://github-profile-trophy.vercel.app/?username=imcanugur&theme=transparent&no-frame=true" width="100%" alt="GitHub Activity Graph" />
+        <a href="https://github-trophies.vercel.app/?username=imcanugur&theme=transparent&no-frame=true" title="Activity Graph">
+          <img src="https://github-trophies.vercel.app/?username=imcanugur&theme=transparent&no-frame=true" width="100%" alt="GitHub Activity Graph" />
         </a>
       </td>
     </tr>
