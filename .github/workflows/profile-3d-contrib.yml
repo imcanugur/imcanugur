@@ -1,0 +1,55 @@
+name: GitHub-Profile-3D-Contrib
+
+on:
+  schedule:
+    - cron: "0 */6 * * *"
+  workflow_dispatch:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          
+      - name: Generate profile 3D contrib
+        uses: yoshi389111/github-profile-3d-contrib@0.7.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          USERNAME: ${{ github.repository_owner }}
+
+      - name: Delete and recreate output-three-d branch
+        run: |
+          git push origin --delete output-three-d || echo "Branch does not exist"
+          git checkout --orphan output-three-d
+          git rm -rf .
+          git config user.name "${{ github.actor }}"
+          git config user.email "${{ github.actor }}@users.noreply.github.com"
+          git commit --allow-empty -m "Start fresh branch"
+          git push --set-upstream origin output-three-d --force
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Copy only SVG files to output-three-d branch (without folder)
+        run: |
+          find profile-3d-contrib -name '*.svg' -exec cp {} ./ \;
+        shell: bash
+        
+      - name: Remove profile-3d-contrib folder after copying SVGs
+        run: |
+          rm -rf profile-3d-contrib
+        shell: bash
+
+      - name: Commit and push only SVG files
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Deploy to GitHub pages"
+          branch: output-three-d
+          force_push: true
+        env:
+          GIT_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
